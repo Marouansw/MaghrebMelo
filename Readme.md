@@ -2,6 +2,11 @@
 
 This project is a web application designed to classify Moroccan music genres. The application allows users to upload an audio file, and the model predicts the genre based on its features. The backend is built using Flask, and the machine learning model is trained on audio data.
 
+![App Screenshot](images/home.png)
+
+![App Screenshot](images/res.png)
+
+
 ## Getting Started
 
 Follow these instructions to set up and run the application locally.
@@ -16,12 +21,12 @@ Make sure you have the following installed on your system:
 
 1. **Clone the Repository**
    ```bash
-   git clone <repository_url>
+   git clone https://github.com/Marouansw/MaghrebMelo.git
    ```
 
 2. **Navigate to the Project Directory**
    ```bash
-   cd Moroccan-Music-Classifier
+   cd Moroccan Music Classifier
    ```
 
 3. **Create a Virtual Environment**
