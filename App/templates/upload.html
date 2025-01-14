@@ -1,0 +1,123 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i'><link rel="stylesheet" href="./static/style.css">
+    
+    <title>Music Audio Classifier</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('./static/images/moroccan-flag-wallpaper-preview.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        h1 {
+            color: #fff;
+           background-size: cover; 
+           background-position: center; 
+           padding: 20px;
+        font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        form {
+            width: 370px;
+            height: 160px;
+            padding: 20px;
+            margin-left: 28%;
+            border-radius: 8px;
+            border: 1px solid #6c82c0; /* Ajoute une bordure autour du formulaire */
+            box-shadow: 0 3px 3px 3px  #cecece;
+            text-align: center;
+            align-self: center;
+
+        }
+
+        .over{
+            border-radius: 10px;
+            border: 1px solid #27701b; /* Ajoute une bordure autour du formulaire */
+            box-shadow: 0 3px 4px 4px #000000;
+            text-align: center;
+            padding: 20px;
+            padding-bottom: 30px;
+
+        }
+        label {
+            margin-top: 50px;
+            font-size: 1.2em;
+            color: #ffe100;
+        }
+        
+        input[type="file"] {
+            font-family: Arial, sans-serif;
+            font-size: 1em;
+            padding: 10px 15px;
+            box-shadow: 0 4px 8px #000000;
+            background-color: #152a15;
+            border: 2px solid #000000;
+            border-radius: 5px;
+            color: #ffffff;
+            cursor: pointer;
+            transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
+        }
+    
+        input[type="file"]:hover {
+            background-color: #000000;
+            color: #74bc23;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    
+        input[type="file"]:focus {
+            outline: none;
+            color: #741414;
+            box-shadow: 0 0 5px 2px #487414;
+            ;
+        }
+        button {
+            background-color: #000000;
+            color: #ff0000;
+            font-size: 1em;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 150px;
+        }
+        button:hover {
+            background-color: #b91d1d;
+            color: #000000;
+        }
+        p {
+            font-size: 1em;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="over">
+
+    <h1>🎶🪇 <strong style="color: #29a42b;">YOUR</strong> MOROCCAN <strong style="color: #ff7a7a;">CLASSIFIER 🪇🎶</strong></h1>
+   
+    <form action="/predict" method="post" enctype="multipart/form-data">
+        <label for="audio"><strong>Select an audio file :</label><br><br>
+        <input type="file" name="audio" id="audio" accept=".wav,.mp3"><br><br>
+        <button type="submit" class="btn btn-warning" >GET TYPE</button>
+    </form>
+    </div>
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+
+    
+</body>
+</html>

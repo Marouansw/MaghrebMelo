@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Futura MS', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100vh;
+            background-color: #000000;
+        }
+        .text-container {
+            width: 50%;
+            padding: 20px;
+            text-align: left;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-top:200px;
+            color: #ffffff;
+        }
+        p {
+            font-size: 1.5rem;
+            color: #555;
+        }
+        a {
+            display: inline-block;
+            width: 100px;
+            margin-top: 150px;
+            padding: 10px 20px;
+            background-color: #780000;
+            color: #548ab7;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px #a8a53d;
+        }
+        a:hover {
+            background-color: #183912;
+            color: #b43030;
+            box-shadow: 0 4px 6px #71f066;
+        }
+        .image-container {
+            width: 53%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+        }
+    </style>
+</head>
+{% if prediction=='rai'%}
+<body style="background-color: #ffffff;color:#000000">
+{% else %}
+<body>
+{% endif %}
+
+    <div class="text-container">
+        {% if prediction=='rai'%}
+        <h1 style="text-align: center; font-size:70px;"><strong style="text-transform: uppercase;color:#000000">{{ prediction }}</strong></h1>
+        {% else %}
+        <h1 style="text-align: center; font-size:70px;"><strong style="text-transform: uppercase;">{{ prediction }}</strong></h1>
+        {% endif %}
+
+        <a href="/">Try more</a>
+    </div>
+    <div class="image-container">
+        {% if prediction == 'rap' %}
+            <img src="./static/images/toto1.jpg" alt="Rap genre image">
+        {% elif prediction == 'andalusian' %}
+            <img src="./static/images/andalusian.jpg" alt="Pop genre image">
+        {% elif prediction == 'rai' %}
+        <img src="./static/images/rai3.jpg" alt="Pop genre image">
+        {% elif prediction == 'imazighn' %}
+        <img src="./static/images/imazighen.jpg" alt="Pop genre image">
+        {% elif prediction == 'chaabi' %}
+        <img src="./static/images/chaabi.jpg" alt="Pop genre image">
+        {% elif prediction == 'gnawa' %}
+        <img src="./static/images/gnawa1.jpg" alt="Pop genre image">
+        {% else %}
+            <img src="default-image.jpg" alt="Default genre image">
+        {% endif %}
+    </div>
+</body>
+</html>
