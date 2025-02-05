@@ -1,0 +1,16 @@
+MoroccanMusic
+data.csv
+images
+.venv
+
+
+# Ignore test files and directories
+tests/
+*.log
+
+# Ignore version control directories
+.git/
+.gitignore
+
+# Ignore IDE configuration files
+.vscode/

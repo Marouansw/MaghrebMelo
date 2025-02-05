@@ -5,13 +5,13 @@ import tensorflow as tf
 import os
 
 # Load pre-trained model
-model = tf.keras.models.load_model('model.h5')
+model = tf.keras.models.load_model('au_model.h5')
 
 # Define class names (update with your class labels)
 class_dict = {0: 'andalusian', 1: 'chaabi', 2: 'gnawa', 3: 'imazighn', 4: 'rai', 5: 'rap'}
 
 # Feature extraction function
-def extract_features(file_path, duration=15):
+def extract_features(file_path, duration=20):
     """
     Extracts features (Mel spectrogram) from the audio file for prediction.
     """
@@ -23,7 +23,7 @@ def extract_features(file_path, duration=15):
     mel_spectrogram_db = librosa.power_to_db(mel_spectrogram, ref=np.max)
     
     # Ensure the shape matches the input shape of the model
-    mel_spectrogram_db = mel_spectrogram_db[:, :646]  # Ensure 646 frames 
+    mel_spectrogram_db = mel_spectrogram_db[:, :862]  # Ensure 646 frames 
     mel_spectrogram_db = np.expand_dims(mel_spectrogram_db, axis=-1)  # Adding channel dimension
     
     return np.expand_dims(mel_spectrogram_db, axis=0)  
@@ -65,4 +65,6 @@ def predict():
 
 # Run the app
 if __name__ == '__main__':
-    app.run(port=5001)  
+    app.run(port=7860)  
+# if __name__ == '__main__':
+#     app.run(host='0.0.0.0', port=5001, debug=True)

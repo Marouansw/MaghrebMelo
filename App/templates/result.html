@@ -67,8 +67,10 @@
     <div class="text-container">
         {% if prediction=='rai'%}
         <h1 style="text-align: center; font-size:70px;"><strong style="text-transform: uppercase;color:#000000">{{ prediction }}</strong></h1>
+        {% elif prediction=='imazighn'%}
+        <h1 style="text-align: center; font-size:70px;"><strong style="text-transform: uppercase;">AMAZIGH</strong></h1>
         {% else %}
-        <h1 style="text-align: center; font-size:70px;"><strong style="text-transform: uppercase;">{{ prediction }}</strong></h1>
+        <h1 style="text-align: center; font-size:70px;"><strong style="text-transform: uppercase;">{{prediction}}</strong></h1>
         {% endif %}
 
         <a href="/">Try more</a>
