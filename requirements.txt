@@ -1,4 +1,4 @@
 flask
 librosa
 numpy
-tensorflow
+tensorflow-cpu

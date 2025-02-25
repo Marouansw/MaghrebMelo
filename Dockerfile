@@ -1,5 +1,5 @@
-# Use the Python 3.9 slim image as a base image
-FROM python:3.9
+# Use the Python 3.12 slim image as a base image
+FROM python:3.12
 
 # Set the working directory in the container
 WORKDIR /app
@@ -9,12 +9,13 @@ COPY . /app
 
 
 # Install Python dependencies
-COPY requirements.txt /app/requirements.txt
-RUN pip install  --upgrade pip \
-    && pip install  -r requirements.txt
+# COPY requirements.txt /app/requirements.txt
+RUN pip install --upgrade pip && pip install  -r requirements.txt
 
 # Expose the port the app runs on
-EXPOSE 7860
+EXPOSE 5000
+
+ENV PYTHONUNBUFFERED=1
 
 # Command to run the application
-CMD ["python", "App/app.py"]
+CMD python ./App/app.py
