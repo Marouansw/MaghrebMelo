@@ -1,23 +1,48 @@
-# Moroccan Music Classifier
+# 🪇 *MaghrebMelo* : Your Moroccan Music Classifier 🪇
 
-This project is a web application designed to classify Moroccan music genres. The application allows users to upload an audio file, and the model predicts the genre based on its features. The backend is built using Flask, and the machine learning model is trained on audio data.
+This project is designed to classify Moroccan music genres. The application allows users to upload an audio file, and the model predicts the genre based on its features. The backend is built using Flask, and the machine learning model is trained on audio data.
 
-![App Screenshot](images/home.png)
+* 📂 **Dataset :** [Available on Kaggle] (https://www.kaggle.com/datasets/ac0hik/moroccan-music-data)
 
-![App Screenshot](images/res.png)
+![App Screenshot](images_/home.png)
+
+![App Screenshot](images_/res.png)
 
 
-## Getting Started
+## 🚀 Getting Started  
 
 Follow these instructions to set up and run the application locally.
 
-### Prerequisites
+### 🐳 Using Docker  
+* ✅ **Make sure you have Docker installed** ❗
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/Marouansw/MaghrebMelo.git
+   ```
+
+2. **Navigate to the Project Directory**
+   ```bash
+   cd MaghrebMelo
+   ```
+1. **Build the image via the Dockerfile**
+  ```bash
+   docker build -t maghrebmelo .
+   ```
+2. **Run the container**
+  ```bash
+   docker run -p 5000:5000 maghrebmelo
+   ```  
+🌍 You can now access the application at http://localhost:5000/
+
+### If you are not familiar with Docker :
+
+### 🛠️ Prerequisites
 
 Make sure you have the following installed on your system:
 - Python (3.8 or later)
 - Git
 
-### Installation Steps
+### 📥Installation Steps
 
 1. **Clone the Repository**
    ```bash
@@ -26,7 +51,7 @@ Make sure you have the following installed on your system:
 
 2. **Navigate to the Project Directory**
    ```bash
-   cd Moroccan Music Classifier
+   cd MaghrebMelo
    ```
 
 3. **Create a Virtual Environment**
@@ -63,14 +88,10 @@ Make sure you have the following installed on your system:
 
 Once the application is running, open your web browser and navigate to:
 ```
-http://127.0.0.1:5001
+http://127.0.0.1:5000
 ```
 
 ### Usage
 
-- Upload an audio file via the web interface.
-- The application will process the file and display the predicted music genre.
-
-## License
-This project is licensed under the MIT License.
-
+- 🎵 Upload an audio file via the web interface.
+- 🤖 The application will process the file and display the predicted music genre.

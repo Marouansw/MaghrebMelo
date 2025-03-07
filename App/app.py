@@ -5,7 +5,8 @@ import tensorflow as tf
 import os
 
 # Load pre-trained model
-model = tf.keras.models.load_model('au_model.h5')
+model_path = os.path.join(os.path.dirname(__file__), "au_model.h5")
+model = tf.keras.models.load_model(model_path)
 
 # Define class names (update with your class labels)
 class_dict = {0: 'andalusian', 1: 'chaabi', 2: 'gnawa', 3: 'imazighn', 4: 'rai', 5: 'rap'}
